@@ -61,7 +61,8 @@ body{
   display: grid;
   grid-template-columns: 1fr;
   gap: var(--nav-gap);
-  max-width: calc(var(--content-max) + var(--nav-width) + var(--nav-gap));
+
+  width: clamp(85%, 90%, 1100px);
   margin: 0 auto;
   padding: var(--pad);
 }
@@ -136,7 +137,7 @@ body{
 
 /* ---------- 4) Content ---------- */
 #content{
-  max-width: var(--content-max);
+  max-width: 100%;
 }
 
 .card{
@@ -351,4 +352,3 @@ hr{ border:0; height:1px; background: rgba(255,255,255,0.10); margin: 16px 0; }
   background: rgba(0,0,0,0.18);
   border-radius: 12px;
 }
-
