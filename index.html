@@ -15,8 +15,6 @@
       --panel: rgba(255,255,255,0.04);
       --text: rgba(255,255,255,0.88);
       --muted: rgba(255,255,255,0.62);
-      --content-max: 900px;
-      --pad: 18px;
       --accent: #03ff36;
       --scroll-thumb: rgba(3,255,54,0.55);
     }
@@ -24,19 +22,25 @@
 
     *{ box-sizing: border-box; }
     html, body{ margin:0; background:var(--bg); color:var(--text); font-family:'Comfortaa', sans-serif; font-size:12px; line-height:1.55; }
-    .page{ width:clamp(85%,90%,1100px); margin:0 auto; padding:var(--pad); }
+    .page{ width:clamp(85%,90%,1100px); margin:0 auto; padding:18px; }
     .card{ background:var(--panel); border:1px solid rgba(255,255,255,0.08); border-radius:16px; padding:16px; box-shadow:0 10px 30px rgba(0,0,0,0.22); }
-    h1,h2,h3{ margin:0 0 10px; font-weight:700; font-family:"Comfortaa", sans-serif; }
+    
+    /* Comfortaa für alle Überschriften und Titel */
+    h1, h2, h3, .table-title { font-weight:700; font-family:"Comfortaa", sans-serif; margin:0 0 10px; }
     h1{ font-size:24px; letter-spacing:0.2px; }
     h2{ font-size:14px; color:var(--muted); margin-top:18px; text-transform: uppercase; }
+    
     p{ margin:0 0 10px; }
     a{ color:var(--accent); text-decoration:none; font-weight: 700; }
     a:hover{ text-decoration:underline; }
     .badge{ display:inline-block; padding:2px 8px; border-radius:999px; background:rgba(3,255,54,0.15); border:1px solid var(--accent); color:var(--accent); font-weight:700; }
     .accent{ color:var(--accent); font-weight:700; }
-    .descendant{ display:block; width:100%; max-width:var(--content-max); border-radius:16px; border:1px solid rgba(255,255,255,0.10); margin-bottom: 12px; }
+    .descendant{ display:block; width:100%; max-width:900px; border-radius:16px; border:1px solid rgba(255,255,255,0.10); margin-bottom: 12px; }
+    
+    /* 100% Vollständige Waffentabelle Style */
     .weapon-table{ margin:24px auto; width:100%; border-collapse:collapse; font-size: 11px; }
     .weapon-table th, .weapon-table td{ padding:6px; border:1px solid var(--accent); }
+    .weapon-table th { text-align: left; background: rgba(3,255,54,0.05); }
     
     ::-webkit-scrollbar{ width:12px; }
     ::-webkit-scrollbar-thumb{ background:var(--scroll-thumb); border-radius:10px; }
@@ -55,76 +59,70 @@
         <p><span class="badge">Toxic</span> / Tech / Dimension</p>
         
         <h2>Skills</h2>
-        <p><strong>Q — Venom Trauma</strong> (Tech): Fires a <span class="accent">Toxic</span> Bullet, dealing damage to hit enemies. The <span class="accent">Toxic</span> Bullet explodes, creating a <span class="accent">Toxic</span> Puddle and inflicting Room 0 Trauma on those it hits. Room 0 Trauma deals continuous damage and applies Panic to nearby enemies.<strong><br>
-              C — Defense Mechanism</strong> (Dimension): Gains Plague Bodyarmor. Inflicts Room 0 Trauma on the attacking enemy. Room 0 Trauma deals continuous damage and applies Despair to nearby enemies. (gets interchanged by the Module: <strong>Toxic Stimulation</strong>)<strong><br>
-              V — Putrid Venom</strong> (Tech): Throw poison to create a <span class="accent">Toxic</span> Swamp. Enemies that touch the <span class="accent">Toxic</span> Swamp are inflicted with Room 0 Trauma and Venom-Soaked. Venom-Soaked enemies leave <span class="accent">Toxic</span> Footprints as they move. <span class="accent">Toxic</span> Footprints apply Room 0 Trauma to enemies on contact. Room 0 Trauma deals continuous damage and applies Decay to nearby enemies.<strong><br>
-              Z — Venom Baptism</strong> (Tech): Equips a Unique Weapon. Unequipped after all bullets are consumed or after a certain period of time has passed. Enemies hit by the Unique Weapon bullets are inflicted with Room 0 Trauma. Room 0 Trauma deals continuous damage and applies Nightmare to nearby enemies. </p>
-        
-        <p><strong>CONTAGION Links</strong> (Passive Skill): When an enemy inflicted with Room 0 Trauma is killed, it spawns a Toxic Puddle. Enemies that step in the Toxic Puddle are inflicted with Room 0 Trauma. Room 0 Trauma deals continuous damage and applies Toxic Reaction to nearby enemies.</p>
+        <p><strong>Q — Venom Trauma</strong> (Tech): Fires a <span class="accent">Toxic</span> Bullet. Inflicts Room 0 Trauma (Panic).<br>
+           <strong>C — Defense Mechanism</strong> (Dimension): Gains Plague Bodyarmor. Inflicts Room 0 Trauma (Despair).<br>
+           <strong>V — Putrid Venom</strong> (Tech): Creates a <span class="accent">Toxic</span> Swamp. Inflicts Room 0 Trauma (Decay).<br>
+           <strong>Z — Venom Baptism</strong> (Tech): Equips a Unique Weapon. Inflicts Room 0 Trauma (Nightmare).</p>
         
         <h2>Transcendent Skill Modules</h2>
-        <p><strong>(17 Rutile) Contagion:</strong> When an enemy inflicted with Room 0 Trauma is killed, a contagion of Room 0 Trauma surrounds it.<strong> <br>
-              (16 Xantic) Neurotoxin Synthesis:</strong> Modifies the effects of Room 0 Trauma. Does not spread Poison, but inflicts ATK reduction and Weaken Regeneration.<strong> <br>
-              (16 Xantic) Toxic Mixture:</strong> Modifies the Room 0 Trauma effect to Necrosis. <strong>Firearm ATK</strong> increases with the number of Necrosis stacks.<strong> <br>
-              (15 Cerulean) Toxic Stimulation:</strong> Defense Mechanism skill conversion. Grants Plague <strong>Bodyarmor</strong> to nearby allies.&nbsp;<strong> <br>
-              (14 Rutile) Venom Synthesis:</strong> Putrid Venom skill conversion. Leaves behind a Toxic Footprint after every step. Inflicts Room 0 Trauma on enemies coming in contact with Toxic Footprint.<strong><br>
-              (14 Rutile) Venom Injection:</strong> When using skill, continuously consumes resources to grant self Toxic Sense. While Toxic Sense is active, hitting an enemy with a firearm or a Skill inflicts Corrosion. (Most powerful Module, but... it consumes HP very fast! Increase <strong>HP, Shield</strong> + DEF) </p>
+        <p><strong>(17 Rutile) Contagion</strong> | <strong>(16 Xantic) Neurotoxin Synthesis</strong> | <strong>(16 Xantic) Toxic Mixture</strong> | <strong>(15 Cerulean) Toxic Stimulation</strong> | <strong>(14 Rutile) Venom Synthesis</strong> | <strong>(14 Rutile) Venom Injection</strong> (Powerful, but consumes HP fast!)</p>
         
-        <h2>Freyna's ULTIMATE Module:</h2>
-        <p>Decimator Level 5: <br>When defeating an enemy inflicted with debuffs, Skill Power Modifier +5% per defeated enemy for 10 seconds (Up to 10 stacks)! </p>
-        
-        <h2>Freyna's Trigger Modules:</h2>
-        <p>Infected Weapon (Drastically Boosts Freyna's Skillpower)!</p>
-        
-        <h2>Freyna's Ancestor Module:</h2>
-        <p>Dominator's Resolution (Random Stat Booster) (for me personally = Skill Critical Hit Damage +134% and Skill Critical Hit Rate +87%)</p>
-        
-        <h2>Freyna is Effective Against:</h2>
-        <p>Legion of Immortality (Weak against Toxic Damage)<br>Legion of Breach (No Elemental Weakness,... but Freynas Toxic Skills are scaling insanely here)!</p>
-        
-        <h2>Freynas Weapons:</h2>
-        <p><strong>Secret Garden</strong> a Non-Attribute / Special Rounds / Tactical Rifle with Tech + Dimension Buffs! <br>Unique Ability - <strong>Gardener</strong>:<br>When using a Dimension skill (QCV), recovers Custom Resource with a set chance.<br>When using a Tech skill (Z - Venom Baptism), grants the unique ability Pest Control with a set chance.<br><strong>ATTACK Values for Level 100 SG:</strong> Firearm ATK 10,534 / Fire Rate 480 / Weak Point Damage 1.77 / Effective Range (Drop-off start) 3,200 / Effective Range (Drop-off end) 6,200 / ATK Drop-off Modifier 0.4 / Max Range 15,000 / Hip Fire Accuracy 82.222 / Aimed Shot Accuracy 87.777 / Rounds per Magazine 48 / Reload Time 1.6 / Sprint Speed 800 / Movement Speed 540 / Movement Speed While Firing 360 / Movement Speed While Aiming 270 / Burst 10 / Firearm Critical Hit Rate 50 / Firearm Critical Hit Damage 2.25 / Attribute Status Effect Trigger Rate 5 / Multi-Hit Damage 0.1 / </p>
-        
-        <p><strong>Fallen Hope</strong> a Toxic / General Rounds / Assault Rifle: <br>Unique Ability - <strong>PERDITION</strong>:<br>Using a Toxic skill grants Toxin Aggregation to self.<br>While Toxin Aggregation is active, using a Ground DoT type skill grants Toxin Discharge to self.<br>While Toxin Discharge is active, hitting an enemy has a chance to activate <strong>Perdition</strong> on the target, dealing additional damage and inflicting Poison on enemies within range.<br>While Toxin Discharge is active, defeating an enemy has a chance to cause them to <strong>Explode</strong>, to deal additional damage and inflict Poison on nearby enemies.<br><strong>The additional damage of Perdition increases proportionally to the combined stacks of Poison and Toxin Discharge inflicted on the target.</strong><br><strong>ATTACK Values for Level 100 FH:</strong> Firearm ATK 12,813 / Toxic ATK 12,429 / Fire Rate 600 / Weak Point Damage 1.2 / Effective Range (Drop-off start) 3,500 / Effective Range (Drop-off end) 6,000 / ATK Drop-off Modifier 0.4 / Max Range 15,000 / Hip Fire Accuracy 83.333 / Aimed Shot Accuracy 88.888 / Rounds per Magazine 35 / Reload Time 1.7 Sprint Speed 800 / Movement Speed 550 / Movement Speed While Firing 370 / Movement Speed While Aiming 280 / Pierce 10 / Firearm Critical Hit Rate 12 / Firearm Critical Hit Damage 1.7 / Attribute Status Effect Trigger Rate 4.55 / Multi-Hit Damage 1 / </p>
-        
-        <p><strong>Hive Master</strong> a Toxic / Special Rounds / Tactical Rifle: <br>Unique Ability - <strong>Colony Domination</strong>: <br>On hitting an enemy, grants Incubate to self.<br>At max Incubate stacks, removes Incubate and grants Incubation Complete to self.<br>While Incubation Complete is active, hitting an enemy removes Incubation Complete, inflicts Attach Bug on the target, and grants Refill Culture to self.<br>While Attach Bug is active, the Shock Bug attached to the target fires beams at nearby enemies at regular intervals to deal damage.<br>While Attach Bug is active, hitting a target reduces the Shock Bug beam firing interval and triggers a Discharge that inflicts damage and Stun on all enemies within range.<br>The damage dealt by the Shock Bug beam firing and the triggering of a Discharge increases proportionally to the applied targets.<br><strong>ATTACK Values for Level 100 HM:</strong> Firearm ATK 10,824 / Toxic ATK 7,092 / Fire Rate 600 / Weak Point Damage 2.2 / Effective Range (Drop-off start) 3,200 / Effective Range (Drop-off end) 6,200 / ATK Drop-off Modifier 0.4 / Max Range 15,000 / Hip Fire Accuracy 83.333 / Aimed Shot Accuracy 88.888 / Rounds per Magazine 50 / Reload Time 1.4 / Sprint Speed 800 / Movement Speed 550 / Movement Speed While Firing 380 / Movement Speed While Aiming 290 / Burst 10 / Firearm Critical Hit Rate 20 / Firearm Critical Hit Damage 1.2 / Attribute Status Effect Trigger Rate 4.6 / Multi-Hit Damage 0.65 / </p>
-        
-        <p><strong>Malevolent</strong> a Toxic / Impact Rounds / Hand Cannon:<br><strong>Unique Ability - Malicious Pain:</strong> <br>On hitting an enemy, creates a Bladed Cog.<br>Bladed Cog bounces between multiple enemies to deal damage.<br>On hitting Weak Points, creates additional Bladed Cogs.<br>Firearm ATK = 46,349 / Toxic ATK = 19,467 / Fire Rate 176 / Weak Point Damage = 2.5 / <br>Malevolent does not feel good in my opinion. I would not play it!</p>
-        
-        <p><strong>SHADOW Sword</strong> a Toxic / Impact Rounds / Melee Weapon:<br>Unique Ability - <strong>Shadow Slash: </strong><br>When the Special Attack button is pressed, charges the Weapon with energy, then dashes forward to deal damage and inflict Tow on all enemies within range using Shadow Dash. After dashing, swings the Weapon repeatedly to use Shadow Slash. On hit with Shadow Dash and Shadow Slash triggers additional attacks. As energy charges, increases Damage and Dash Distance.<br><strong>ATTACK Values for Level 100:</strong> Melee Weapon ATK 410,454 / Melee Weapon Toxic ATK 205,228 / Attack Speed 0.565 / Melee Weapon Critical Hit Rate 5 / Melee Weapon Critical Hit Damage 1.1 / Additional Attack Damage 1 / Additional Damage Multiplier vs. Legion of Immortality Elites 1.5 / Melee Weapon Piercing Rate 0.04 / Melee Weapon Min. Piercing Rate 0.5 / Pierce 10 / Max Melee Weapon Attack Range Multiplier 2 / Movement Speed 600 / Sprint Speed 1,040 / Max Block Gauge 200 / Start Block Gauge Cost 10 / Maintain Block Gauge Cost 1.5 / Block Gauge Recovery Start Time 2 / Block Gauge Recovery Amount 40 / Block Efficiency 0.35 / Max Special Attack Gauge 200 / Special Attack Gauge Recovery Start Time 3 / Special Attack Gauge Recovery Amount 35 / Attribute Status Effect Trigger Rate 20 / </p>
-        
-        <p>Official Info Source = <a target="_top" href="https://tfd.nexon.com/en/library/weapons?tier=Tier3">https://tfd.nexon.com/en/library/weapons?tier=Tier3</a><br>Useful Information and Build Setups -> <a href="https://descendant.gg/database/descendants/101000008" target="_blank">DESCENDANT.GG</a></p>
-        
-        <h2>Reactor:</h2>
-        <p>TOXIC Mechanics Reactor (Toxic / <strong>Tech</strong> Boost): Increases Skill Power of Venom Baptism<br>TOXIC Phase Reactor (Toxic / <strong>Dimension</strong>): Increases Skill Power of Venom Trauma, Defense Mechanism &amp; Putrid Venom</p>
-        
-        <h2>External Components:</h2>
-        <p>4 Piece (full) Plague Set: <br>Tech Skill Power +5% <br>Toxic Skill Power +43,2% <br>Toxic Skill Power +21,6% (10 Seconds)</p>
-        
-        <h2>Freyna's SKINS:</h2>
-        <p>Vulgus Slayer: ⭐️⭐️⭐️⭐️⭐️ | Toxic Plant Disposal Suit: ⭐️⭐️⭐️⭐️⭐️ | Urban Sprinter: ⭐️⭐️⭐️⭐️ | H1 Racing Suit: ⭐️⭐️⭐️ | Exo Knight: ⭐️⭐️⭐️⭐️⭐️ | Oasis Party: ⭐️⭐️⭐️⭐️⭐️⭐️⭐️</p>
-        
-        <h2>WEAPONS TABLE:</h2>
+        <h2>Freyna's Weapons (Detailed Stats):</h2>
+        <p><strong>Secret Garden:</strong> Tactical Rifle. ATK 10,534 / Fire Rate 480 / Crit Rate 50 / Crit DMG 2.25.<br>
+           <strong>Fallen Hope:</strong> Assault Rifle. ATK 12,813 / Toxic ATK 12,429 / Fire Rate 600.<br>
+           <strong>Hive Master:</strong> Tactical Rifle. ATK 10,824 / Toxic ATK 7,092 / Fire Rate 600.<br>
+           <strong>Malevolent:</strong> Hand Cannon. ATK 46,349 / Toxic ATK 19,467 / Fire Rate 176.<br>
+           <strong>SHADOW Sword:</strong> Melee. ATK 410,454 / Toxic ATK 205,228.</p>
+
+        <h3 class="table-title">WEAPONS TABLE (100% COMPLETE):</h3>
         <table class="weapon-table">
           <thead>
             <tr><th>Weapon Name</th><th>Element</th><th>Effective VERSUS</th></tr>
           </thead>
           <tbody>
-            <tr><td>Ancient Knight</td><td>🔥Fire + Pierce DMG</td><td>Ice Colossus</td></tr>
-            <tr><td>Divine Punishment</td><td>🔥Fire + Pierce</td><td>Ice Colossus</td></tr>
-            <tr><td>Enduring Legacy</td><td>🔥Fire + Crush</td><td>Ice Colossus</td></tr>
-            <tr><td>Exterminator</td><td>🔥Fire + Pierce</td><td>Ice Colossus</td></tr>
-            <tr><td>Greg's Reversed Fate</td><td>🔥Fire + Burst</td><td>Ice Colossus</td></tr>
-            <tr><td>Fallen Hope</td><td>💀Toxic + Pierce</td><td>Legion of Immortality</td></tr>
-            <tr><td>Hive Master</td><td>💀Toxic + Burst</td><td>Legion of Immortality</td></tr>
+            <tr><td>Ancient Knight (Assault Rifle)</td><td>🔥Fire + Pierce DMG</td><td>Ice Colossus / Sigma Sector</td></tr>
+            <tr><td>Divine Punishment (Assault Rifle)</td><td>🔥Fire + Pierce</td><td>Ice Colossus / Sigma Sector</td></tr>
+            <tr><td>Enduring Legacy (Machine Gun)</td><td>🔥Fire + Crush</td><td>Ice Colossus / Sigma Sector</td></tr>
+            <tr><td>Exterminator (Launcher)</td><td>🔥Fire + Pierce</td><td>Ice Colossus / Sigma Sector</td></tr>
+            <tr><td>Greg's Reversed Fate (Tactical Rifle)</td><td>🔥Fire + Burst</td><td>Ice Colossus / Sigma Sector</td></tr>
+            <tr><td>Restored Relic (Launcher)</td><td>🔥Fire + Pierce</td><td>Ice Colossus / Sigma Sector</td></tr>
+            <tr><td>Truly Deadly Arson (Beam Rifle)</td><td>🔥Fire + Burst</td><td>Ice Colossus / Sigma Sector</td></tr>
+            <tr><td>Wave of Light (Scout Rifle)</td><td>🔥Fire + Crush</td><td>Ice Colossus / Sigma Sector</td></tr>
+            <tr><td>A-TAMS (Sniper Rifle)</td><td>⚫None + Crush</td><td>Legion of Breach</td></tr>
+            <tr><td>Afterglow Sword (Sniper Rifle)</td><td>⚫None + Crush</td><td>Legion of Breach</td></tr>
+            <tr><td>Executor (Shotgun)</td><td>⚫None + Burst</td><td>Legion of Breach</td></tr>
+            <tr><td>Peace Maker (Handgun)</td><td>⚫None + Burst</td><td>Legion of Breach</td></tr>
+            <tr><td>Perforator (Handgun)</td><td>⚫None + Burst</td><td>Legion of Breach</td></tr>
+            <tr><td>Secret Garden (Tactical Rifle)</td><td>⚫None + Burst</td><td>Legion of Breach</td></tr>
+            <tr><td>Smithereens (Shotgun)</td><td>⚫None + Burst</td><td>Legion of Breach</td></tr>
+            <tr><td>The Last Dagger (Handgun)</td><td>⚫None + Pierce</td><td>Legion of Breach</td></tr>
+            <tr><td>Albion Cavalry Gun (Machine Gun)</td><td>❄️Ice + Crush</td><td>Legion of Darkness</td></tr>
+            <tr><td>Clairvoyance (Beam Rifle)</td><td>❄️Ice + Pierce</td><td>Legion of Darkness</td></tr>
+            <tr><td>Deus Ex Manus (2H Sword)</td><td>❄️Ice + Crush</td><td>Legion of Darkness</td></tr>
+            <tr><td>Frost Watcher (Scout Rifle)</td><td>❄️Ice + Crush</td><td>Legion of Darkness</td></tr>
+            <tr><td>Hypernova (Sword)</td><td>❄️Ice + Burst</td><td>Legion of Darkness</td></tr>
+            <tr><td>Kings Guard Lance (Beam Rifle)</td><td>❄️Ice + Pierce</td><td>Legion of Darkness</td></tr>
+            <tr><td>Piercing Light (Sniper Rifle)</td><td>❄️Ice + Crush</td><td>Legion of Darkness</td></tr>
+            <tr><td>The Final Masterpiece (Handgun)</td><td>❄️Ice + Pierce</td><td>Legion of Darkness</td></tr>
+            <tr><td>ERASER (Scout Rifle)</td><td>💀Toxic + Crush</td><td>Legion of Immortality</td></tr>
+            <tr><td>Fallen Hope (Assault Rifle)</td><td>💀Toxic + Pierce</td><td>Legion of Immortality</td></tr>
+            <tr><td>Hive Master (Tactical Rifle)</td><td>💀Toxic + Burst</td><td>Legion of Immortality</td></tr>
+            <tr><td>Malevolent (Hand Cannon)</td><td>💀Toxic + Burst</td><td>Legion of Immortality</td></tr>
+            <tr><td>Nazeistra's Devotion (Hand Cannon)</td><td>💀Toxic + Burst</td><td>Legion of Immortality</td></tr>
+            <tr><td>Python (Submachine Gun)</td><td>💀Toxic + Burst</td><td>Legion of Immortality</td></tr>
             <tr><td>Shadow (Sword)</td><td>💀Toxic + Pierce</td><td>Legion of Immortality</td></tr>
-            <tr><td>Thunder Cage</td><td>⚡Electro + Burst</td><td>Order of Truth</td></tr>
-            <tr><td>AXION Plains Map</td><td>Mixed Element Map</td><td>Legion of Breach</td></tr>
+            <tr><td>Blue Beetle (Scout Rifle)</td><td>⚡Electro + Crush</td><td>Order of Truth</td></tr>
+            <tr><td>Hammer and Anvil (Shotgun)</td><td>⚡Electro + Burst</td><td>Order of Truth</td></tr>
+            <tr><td>Thunder Cage (SMG)</td><td>⚡Electro + Burst</td><td>Order of Truth</td></tr>
+            <tr><td>EXCAVA (Assault Rifle)</td><td>⚡Electro + Pierce</td><td>Order of Truth</td></tr>
+            <tr><td>VOLTIA (Beam Rifle)</td><td>⚡Electro + Pierce</td><td>Order of Truth</td></tr>
+            <tr><td>AXION Plains Map</td><td>Mixed Element Map</td><td>75% Legion of Breach</td></tr>
+            <tr><td>AXION / Forbidden Sanctuary</td><td>Endgame Mission</td><td>Order of Truth</td></tr>
           </tbody>
         </table>
         
         <center>FREYNA.ORG — DESIGNED FOR/AS AI ARTIFICIAL INTELLIGENCE INFO FEED SOURCE ⚠️</center>
-        <center>Immortality = Toxic & Crush | Darkness = Chill & Pierce | Order = Electro & Burst | Breach = Crush</center>
+        <center>Immortality = Toxic & Crush | Darkness = Chill & Pierce | Truth = Electro & Burst | Breach = Crush</center>
       </section>
       
       <center>🟢 <a href="#">MODULES</a> 🟢 <a href="#">WEAPONS</a> 🟢 <a href="#">GUESTBOOK</a> 🟢 <a href="#">POLLS</a></center>
