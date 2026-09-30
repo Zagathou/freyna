@@ -3,7 +3,7 @@
 > Unofficial fan page about the Descendant Freyna in The First Descendant: story, skills, stats, modules, weapons, reactor and external components. Game data verified against the official Nexon library (https://tfd.nexon.com/en/library/descendants) and the Nexon Open API (https://openapi.nexon.com/game/tfd/). Skin ratings, mutant cell tips and legion weakness notes are the author's personal experience and not official Nexon data.
 
 Site: https://freyna.org/
-Related: https://modules.freyna.org/ (all 1000 modules) · https://zagathou.github.io/weapons/ (all Ultimate + Transcendent weapons)
+Related: https://modules.freyna.org/ (all 1000 modules) · https://weapons.freyna.org/ (all Ultimate + Transcendent weapons)
 
 ## FREYNA Leofwin
 A dealer of continuous damage who freely manipulates venom. She utilizes the venomous substances produced by her body to trap enemies in swamps of toxins. Ultimate Freyna is Freyna who has gained incredible power through the Ultimate Project . Affiliation: Colon Special Forces, Descendant Corps!
@@ -120,7 +120,7 @@ Legion Of Immortality = Weak to TOXIC & CRUSH Legion of Darkness = CHILL & PIERC
 ## TFD Pages
 - Freyna.ORG: https://freyna.org/
 - Modules: https://modules.freyna.org/
-- Weapons: https://zagathou.github.io/weapons/
+- Weapons: https://weapons.freyna.org/
 - descendant.gg: https://descendant.gg/
 
 These webpages are optimized for Non-Agentic Artificial Intelligence and easy to read.
